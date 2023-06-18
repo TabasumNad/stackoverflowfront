@@ -21,9 +21,13 @@ const AskQuestion = () => {
         }
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = e => {
         e.preventDefault()
-        dispatch(askQuestion({questionTitle, questionBody, questionTags, userPosted: User.result.name, userId: User?.result?._id}, navigate))
+        dispatch(askQuestion({questionTitle, questionBody, questionTags, userPosted: questionTags , userId:questionTitle}
+            )
+            );
+            navigate('/');
+            
     }
 
   return (
